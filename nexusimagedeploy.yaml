@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hellocont
-        image: maktumsab/hello-app:latest
+        image: maktumsab/hello-app:10
         resources:
           limits:
             memory: 2Gi
