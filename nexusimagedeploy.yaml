@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hellocont
-        image: maktumsab/java-app
+        image: maktumsab/java-app:latest
         resources:
           limits:
             memory: 2Gi
