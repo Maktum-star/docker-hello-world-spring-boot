@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adimage
+  name: maktum
 spec:
   selector:
     matchLabels:
-      app: adimage
+      app: maktum
   replicas: 1
   template:
     metadata:
       labels:
-        app: adimage
+        app: maktum
     spec:
       containers:
       - name: mycontainerad
-        image: 13.87.154.122:8123/java-web-app:latest
+        image: maktumsab/java-app:6
         imagePullPolicy: IfNotPresent
 
 ---
@@ -24,11 +24,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: adimageservice
+  name: maktum
 spec:
   type: LoadBalancer
   ports:
-  - port: 8080
+  - port: 8082
   selector:
-    app: adimage
+    app: maktum
 
