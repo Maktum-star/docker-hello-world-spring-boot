@@ -1,34 +1,41 @@
 ---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: maktum
+  name: hello-deploy
 spec:
   selector:
     matchLabels:
-      app: maktum
+      app: hello-app
   replicas: 1
   template:
     metadata:
       labels:
-        app: maktum
+        app: hello-app
     spec:
       containers:
-      - name: mycontainerad
+      - name: hellocont
         image: maktumsab/java-app
-        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: 2Gi
+            cpu: "1"
+          requests:
+            memory: 500Mi
+            cpu: 250m
 
 ---
-
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: maktum
+  name: hello-app
 spec:
-  type: LoadBalancer
   ports:
-  - port: 8082
+    - name: helloport
+      port: 8082
+  type: LoadBalancer
   selector:
-    app: maktum
+    app: hello-app
 
