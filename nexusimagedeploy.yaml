@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hellocont
-        image: maktumsab/java-app:latest
+        image: maktumsab/hello-app:latest
         resources:
           limits:
             memory: 2Gi
@@ -34,7 +34,7 @@ metadata:
 spec:
   ports:
     - name: helloport
-      port: 8082
+      port: 8080
   type: LoadBalancer
   selector:
     app: hello-app
