@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: mycontainerad
-        image: maktumsab/java-app:6
+        image: maktumsab/java-app
         imagePullPolicy: IfNotPresent
 
 ---
